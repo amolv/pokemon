@@ -5,7 +5,8 @@ import { LayoutProvider } from '../contexts';
 import { Nav } from '../components';
 import { ApolloProvider } from '@apollo/client';
 import { client } from './client';
-import { ListPage, Home } from '../screens';
+import { ListPage, Home, DetailsPage } from '../screens';
+import { CONSTANTS } from '../constants';
 
 function App() {
   const classes = useStyles();
@@ -19,7 +20,9 @@ function App() {
               <div className={classes.scrollableArea}>
                 <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/pokemon" element={<ListPage />} />
+                  <Route path={CONSTANTS.POKEMONLIST} element={<ListPage />}>
+                    <Route path=":id" element={<DetailsPage />}></Route>
+                  </Route>
                 </Routes>
               </div>
             </div>

@@ -1,15 +1,13 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { Outlet } from 'react-router-dom';
-import { PokemonList } from '../components';
+import { PokemonDetails } from '../components';
 
-export const ListPage = () => {
+export const DetailsPage = () => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <PokemonList />
-      <Outlet />
+      <PokemonDetails />
     </div>
   );
 };
@@ -21,5 +19,5 @@ const useStyles = createUseStyles(
       height: '100%',
     },
   },
-  { name: 'ListPage' }
+  { name: 'DetailsPage' }
 );
